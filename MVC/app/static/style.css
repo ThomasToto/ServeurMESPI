@@ -1,0 +1,4 @@
+div#background {
+  background-image: url('static/background.jpg');
+  background-repeat: no-repeat;
+}

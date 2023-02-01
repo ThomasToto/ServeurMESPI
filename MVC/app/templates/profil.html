@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+		Progression : 
+		<br><br>
+		LFI / RFI progress : 
+		<div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ tabProgress1 }}%">{{ account.LFI_PROGRESS }} / 3</div>
+        </div>
+        <br><br>
+        
+        		XSS progress : 
+		<div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ tabProgress2 }}%">{{ account.XSS_PROGRESS }} / 3</div>
+        </div>
+        <br><br>
+        
+        		Shellshock progress : 
+		<div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ tabProgress3 }}%">{{ account.SHELLSHOCK_PROGRESS }} / 3</div>
+        </div>
+        <br><br>
+        
+        		HeartBleed progress : 
+		<div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ tabProgress4 }}%">{{ account.HEARTBLEED_PROGRESS }} / 3</div>
+        </div>
+        <br><br>
+        
+        		MITM progress : 
+		<div class="progress">
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{ tabProgress5 }}%">{{ account.MITM_PROGRESS }} / 3</div>
+        </div>
+        
+        <br><br><br>
+        MCQ results : 
+        
+        <ul>
+        <li>MCQ LFI / RFI : {{ account.LFI_SCORE}} / 5</li>
+        <br>
+        <li>MCQ XSS : {{ account.XSS_SCORE}} / 4</li>
+        <br>
+        <li>MCQ Shellshock : {{ account.SHELLSHOCK_SCORE}} / 4</li>
+        <br>
+        <li>MCQ HeartBleed : {{ account.HEARTBLEED_SCORE}} / 3</li>
+        <br>
+        <li>MCQ MITM : {{ account.MITM_SCORE}} / 3</li>
+        <br>
+        </ul>
+		<br><br>
+		
+		
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+</div>
+
+{% endblock %}

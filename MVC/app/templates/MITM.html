@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<div class="tabbable" id="tabs-807289">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" href="#tab1" data-toggle="tab">Explanation</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tab3" data-toggle="tab">Practical part</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tab4" data-toggle="tab">MCQ</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab1">
+						<p align="justify">
+							<br> <br>
+						<h2>
+							<center><u>Man In The Middle</u></center>
+						</h2>
+						<br><br>
+						A man-in-the-middle (MITM) attack is a type of cyberattack where attackers intercept an existing conversation or data transfer, either by eavesdropping or by pretending to be a legitimate participant. To the victim, it will appear as
+						though a standard exchange of information is underway but by inserting themselves into the “middle” of the conversation or data transfer, the attacker can quietly hijack information.
+						<br><br>
+						The goal of a MITM attack is to retrieve confidential data such as bank account details, credit card numbers, or login credentials, which may be used to carry out further crimes like identity theft or illegal fund transfers. Because MITM
+						attacks are carried out in real time, they often go undetected until it’s too late.
+						<br> <br>
+						A MITM attack is a success when the attacker succeed in the interception and in the decryption.
+						<br><br>
+						You can see below a little example of a MITM:
+						<br> <br>
+						<center><img src="static/assets/img/Explanation_MITM.png"></img></center>
+						</p>
+						<p align="justify">
+							<br><br><br>
+							<b>1. Interception</b>
+							<br><br>
+							Interception involves the attacker interfering with a victim’s legitimate network by intercepting it with a fake network before it can reach its intended destination. The interception phase is essentially how the attacker inserts
+							themselves as the “man in the middle.” Attackers frequently do this by creating a fake Wi-Fi hotspot in a public space that doesn’t require a password. If a victim connects to the hotspot, the attacker gains access to any online data
+							exchanges they perform.
+							<br><br>
+							Once an attacker successfully inserts themselves between the victim and the desired destination, they may employ a variety of techniques to continue the attack:
+							<br><br>
+						<ul>
+							<li>
+								<b>IP Spoofing:</b> Every Wi-Fi-connected device has an internet protocol (IP) address that is central to how networked computers and devices communicate. IP spoofing involves an attacker altering IP packets in order to impersonate
+								the victim’s computer system. When the victim tries to access a URL connected to that system, they’re unknowingly sent to the attacker’s website instead.
+								<br><br>
+							</li>
+							<li>
+								<b>ARP Spoofing:</b> With Address Resolution Protocol (ARP) spoofing, the attacker uses falsified ARP messages to link their MAC address with a victim’s legitimate IP address. By connecting their MAC address to an authentic IP
+								address, the attacker gains access to any data sent to the host IP address.
+								<br><br>
+							</li>
+							<li>
+								<b>DNS Spoofing:</b> Domain Name Server (DNS) spoofing, also known as DNS cache poisoning, involves an attacker altering a DNS server in order to redirect a victim’s web traffic to a fraudulent website that closely resembles the
+								intended website. If the victim logs in to what they believe is their account, attackers can gain access to personal data and other information.
+								<br><br>
+							</li>
+						</ul>
+						<b>2. Decryption</b>
+						<br><br>
+						A MITM attack doesn’t stop at interception. After the attacker gains access to the victim’s encrypted data, it must be decrypted in order for the attacker to be able to read and use it. A number of methods might be used to decrypt the
+						victim’s data without alerting the user or application:
+						<br><br>
+						<ul>
+							<li>
+								<b>HTTPS Spoofing:</b> HTTPS spoofing is a method for tricking your browser into thinking a certain website is safe and authentic when it’s not. When a victim attempts to connect to a secure site, a false certificate is sent to their
+								browser which leads them to the attacker’s malicious website instead. This gives the attacker access to any data the victim shares on that site.
+
+							</li>
+							<li>
+								<b>SSL Hijacking:</b> Any time you connect to an unsecure website, indicated by “HTTP” in the URL, your server automatically reroutes you to the secure HTTPS version of that site. With SSL hijacking, the attacker uses their own
+								computer and server to intercept the reroute, allowing them to interrupt any information passed between the user’s computer and server. This gives them access to any sensitive information the user uses during their session.
+								<br><br>
+							</li>
+							<li>
+								<b>SSL Stripping:</b> SSL stripping involves the attacker interrupting the connection between a user and a website. This is done by downgrading a user’s secure HTTPS connection to an unsecure HTTP version of the website. This connects
+								the user to the unsecure site while the attacker maintains a connection to the secure site, rendering the user’s activity visible to the attacker in an unencrypted form.
+								<br><br>
+							</li>
+						</ul>
+						<br><br>
+						<a class="btn btn-success" style="float: right;" href="/avancementMITM">I finished the course</a>
+						<br><br><br>
+						</p>
+						
+						
+					</div>
+					<div class="tab-pane" id="tab3">
+						<br><br>
+						<center>
+						<p align="justify">
+							In this part you will be able to practice on vulnerabilities via a virtual machine:
+						</p>
+						<a class="btn btn-success" href="https://10.10.15.14:8080" target="_blank" rel="noopener noreferrer">Launch VM n°1</a>
+						<a class="btn btn-success" href="https://10.10.15.14:8080" target="_blank" rel="noopener noreferrer">Launch VM n°2</a>
+						<a class="btn btn-success" href="https://10.10.15.14:8080" target="_blank" rel="noopener noreferrer">Launch VM n°3</a>
+						<a class="btn btn-success" href="/downloadMITM" target="_blank" rel="noopener noreferrer"> Download PDF </a>
+												
+						</center>
+					</div>
+					<div class="tab-pane" id="tab4">
+						<br><br>
+						Pour valider cet enseignement veuillez répondre au questionnaire suivant :
+						<br><br>
+						<center>
+						<form action="/MITM_results" method="POST" class="form-example">
+							<div class="form-example">
+								<label for="name">1)	What are the 2 main point of a MITM attack ?  </label>
+								<br>
+								<input type="checkbox" name="1-1"  >
+								<label>a. Decryption and Encryption</label>
+								<br>
+								<input type="checkbox" name="1-2"  >
+								<label>b. Interception and Decryption </label>
+								<br>
+								<input type="checkbox" name="1-3"  >
+								<label>c. Encryption and Interception</label>
+								<br><br><br>
+
+								<label for="name">2)	What is the most famous goal of the MITM attack ?  </label>
+								<br>
+								<input type="checkbox" name="2-1"  >
+								<label>a. Stealing password and bank number </label>
+								<br>
+								<input type="checkbox" name="2-2"  >
+								<label>b. Stealing your video game password</label>
+								<br>
+								<input type="checkbox" name="2-3"  >
+								<label">c. Finding your location</label>
+								<br><br><br>
+
+								<label for="name">3)	What does an attacker do during a MITM attack ?</label>
+								<br>
+								<input type="checkbox" name="3-1"  >
+								<label>a.	An attacker intercept a connection on a website and block it</label>
+								<br>
+								<input type="checkbox" name="3-2"  >
+								<label>b.	An attacker connect on the person chat and discuss with the victim</label>
+								<br>
+								<input type="checkbox" name="3-3"  >
+								<label">c. An attacker intercept an existing conversation or data transfer</label>
+
+							</div>
+							<br><br>
+							<div class="form-example">
+								<input type="submit" value="Submit">
+							</div>
+							<br><br><br>
+							</center>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+</div>
+
+{% endblock %}

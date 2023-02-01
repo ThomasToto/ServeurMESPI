@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Login</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='../static/css/styles2.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	</head>
+	<body>
+		<div class="login">
+			<h1>Sign up</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}" class="inactive">Sign in</a>
+				<a href="{{ url_for('register') }}" class="active">Sign up</a>
+			</div>
+
+			<form action="{{ url_for('register2') }}" method="post">
+				<label for="mail">
+					<i class="fas fa-user"></i>
+				</label>
+				<input type="text" name="username" placeholder="Username" id="username" required>
+				
+				<label for="mail">
+					<i class="fas fa-envelope"></i>
+				</label>
+				<input type="email" name="email" placeholder="Email" id="email" required>
+				
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+				
+				<label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword" required>
+				
+				
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Submit" >
+			</form>
+		</div>
+	</body>
+</html>
+

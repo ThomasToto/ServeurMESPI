@@ -1,0 +1,137 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<br><br>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-10">
+			<div class="tabbable" id="tabs-807289">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" href="#tab1" data-toggle="tab">Explanation</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tab3" data-toggle="tab">Practical part</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#tab4" data-toggle="tab">MCQ</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="tab1">
+						<p align="justify">
+							<br> <br>
+						<h2>
+							<center><u>Shellshock/Bashdoor</u></center>
+						</h2>
+						<br><br>
+						Shellshock is the media-friendly name for a security vulnerability found in Bash, a command shell program commonly used on Linux and UNIX systems.
+						<br>
+						The vulnerability is what’s known as a Remote Code Execution vulnerability, or RCE.This means that someone who isn’t already logged on to your computer might be able to trick Bash into running a program that it wasn’t supposed to.
+						<br>
+						Officially, the bug is documented as CVE-2014-6271 and CVE-2014-7169
+						<br>
+						A command shell is a program that helps you run other programs on Linux and UNIX, much like the Command Prompt on Windows.Bash stands for “Bourne Again Shell” (a pun celebrating that it was derived from an earlier shell written by Stephen Bourne of Bell Labs).
+						<br>
+						You can use Bash interactively, typing in commands and immediately viewing the output, or as a tool to help you run a series of programs specified in a text file called a shell script.
+						<br>
+						A code execution bug in a program that is supposed to run commands for you does indeed sound like a contradiction. But Shellshock exists because it is possible to trick Bash into running a program when you wouldn’t expect it to.
+						<br>
+						That may allow a remote attacker to send you text that you hand over to a Bash script as harmless looking data, only to find that it gets processed as if it were code, or program commands.
+						<br>
+						This sort of trickery is often known as command injection, because it involves sneaking in operating system commands, hoping that they get run by mistake.
+						<br><br>
+						You can understand how does work shellshock trough this illustration :
+						<br><br><br>
+						<center><img src="static/assets/img/Explanation_Bashdoor.png"></img></center>
+						<br><br>
+						<a class="btn btn-success" style="float: right;" href="/avancementShellshock">I finished the course</a>
+						<br><br><br>
+						</p>
+					</div>
+					<div class="tab-pane" id="tab3">
+						<br><br>
+						<center>
+						<p align="justify">
+							In this part you will be able to practice on vulnerabilities via a virtual machine:
+						</p>
+						<a class="btn btn-success" href="https://10.10.15.14:8080" target="_blank" rel="noopener noreferrer">Launch VM n°1</a>
+						<a class="btn btn-success" href="https://10.10.15.14:8080" target="_blank" rel="noopener noreferrer">Launch VM n°2</a>
+						<a class="btn btn-success" href="/downloadShellshock" target="_blank" rel="noopener noreferrer"> Download PDF </a>
+
+						</center>
+					</div>
+					<div class="tab-pane" id="tab4">
+						<br><br>
+						Pour valider cet enseignement veuillez répondre au questionnaire suivant :
+						<br><br>
+						<center>
+						<form action="/Shellshock_results" method="POST" class="form-example">
+							<div class="form-example">
+								<label for="name">1) On which systems are used the bash command from the shellshock vulnerability ?  </label>
+								<br>
+								<input type="checkbox" name="1-1"  >
+								<label>a.	Windows 10</label>
+								<br>
+								<input type="checkbox" name="1-2"  >
+								<label>b. Linux and Unix systems </label>
+								<br>
+								<input type="checkbox" name="1-3"  >
+								<label>c. Ubuntu</label>
+								<br><br><br>
+
+								<label for="name">2) This vulnerability was recognized as what?  </label>
+								<br>
+								<input type="checkbox" name="2-1"  >
+								<label>a. Remote Code Execution vulnerability </label>
+								<br>
+								<input type="checkbox" name="2-2"  >
+								<label>b. A simple bug on Bash</label>
+								<br>
+								<input type="checkbox" name="2-3"  >
+								<label">c. Bash Biggest Vulnerability</label>
+								<br><br><br>
+
+								<label for="name">3) What is the shellshock vulnerability ?</label>
+								<br>
+								<input type="checkbox" name="3-1"  >
+								<label>a.	It allows the attacker to control your computer through Bash command</label>
+								<br>
+								<input type="checkbox" name="3-2"  >
+								<label>b.	It allows the attacker to run program when you don’t except it </label>
+								<br>
+								<input type="checkbox" name="3-3"  >
+								<label">c. It allows the attacker to see the communication between 2 people with Bash command</label>
+								<br><br><br>
+
+								<label for="name">4) How does the attacker run programs ?  </label>
+								<br>
+								<input type="checkbox" name="4-1"  >
+								<label>a. He writes some command in the source code of the website in Python </label>
+								<br>
+								<input type="checkbox" name="4-2"  >
+								<label>b.	He asks the information of the victim and then send some Bash command to him</label>
+								<br>
+								<input type="checkbox" name="4-3"  >
+								<label">c. He injects some arbitrary OS command in the bash environment </label>
+
+
+							</div>
+							<br><br>
+							<div class="form-example">
+								<input type="submit" value="Submit">
+							</div>
+							<br><br><br>
+							</center>
+						</form>					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1">
+		</div>
+	</div>
+</div>
+
+{% endblock %}
